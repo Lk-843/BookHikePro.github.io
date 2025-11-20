@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Hike Pro • Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">📚 Book Hike Pro</a>
+    <nav class="links">
+      <a href="index.html" class="active">Home</a>
+      <a href="cart.html">Cart <span id="cart-count" class="badge">0</span></a>
+      <a id="admin-link" href="admin.html" style="display:none">Admin</a>
+      <span class="spacer"></span>
+      <span id="greeting" class="muted"></span>
+      <a id="auth-link" href="auth.html" style="display:none">Login</a>
+      <button id="logout-btn" class="ghost small" style="display:none">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+
+        <h1>Find your next great read.</h1>
+        <p class="muted">Teal-blue professional theme · Clean & fast shopping · Admin panel included.</p>
+        <div class="searchbar">
+          <input id="search-input" type="text" placeholder="Search by title, author, or tag…"/>
+          <button id="clear-search" class="ghost">Clear</button>
+        </div>
+      </div>
+      <div class="panel">
+        <strong>Features</strong>
+        <ul class="muted tiny">
+          <li>LocalStorage auth (Login/Signup), Cart, and Orders</li>
+          <li>Admin: Add / Edit / Delete books & manage admins</li>
+          <li>Unified authentication page with tabs</li>
+          <li>Responsive grid, Product details modal</li>
+        </ul>
+        <div class="row" style="margin-top:10px">
+          <a href="auth.html"><button class="primary small">Login / Sign Up</button></a>
+          <a href="admin.html"><button class="ghost small">Admin Panel</button></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="filters">
+      <div class="chip-group" id="category-chips"></div>
+      <div class="sort">
+        <label for="sort-select" class="muted">Sort</label>
+        <select id="sort-select">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="title-asc">Title A–Z</option>
+          <option value="title-desc">Title Z–A</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="products" class="grid"></section>
+  </main>
+
+  
+<footer class="footer">
+  <div class="footer-left">
+    <h3>📚 Book Hike Pro</h3>
+    <p class="muted tiny">A modern, fast bookstore web app for college submission.</p>
+  </div>
+  <div class="footer-mid">
+    <h4>Student Info</h4>
+    <p><strong>Name:</strong> Bittu Barh</p>
+    <p><strong> <strong>Mobile no:</strong> 7990235157</p>
+    <p><strong>Email:</strong> bittu.barh@example.com</p>
+  </div>
+  <div class="footer-right">
+    <h4>Follow</h4>
+    <p>
+      <a href="https://www.instagram.com/" target="_blank">Instagram</a> |
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> |
+      <a href="https://www.github.com/" target="_blank">GitHub</a>
+    </p>
+    <p class="tiny muted">© <span id="year"></span> Book Hike Pro</p>
+  </div>
+</footer>
+<script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('#year').forEach(el=>el.textContent=new Date().getFullYear())});</script>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Details Modal -->
+  <div id="details-modal" class="modal" aria-hidden="true">
+    <div class="sheet">
+      <div class="header">
+        <strong id="dm-title">Book Details</strong>
+        <button id="dm-close" class="ghost small">Close</button>
+      </div>
+      <div class="content">
+        <img id="dm-img" alt=""/>
+        <div class="body">
+          <div class="muted" id="dm-author"></div>
+          <p id="dm-desc" class="tiny">A great book to expand your knowledge and skills.</p>
+          <div class="row" style="justify-content:space-between">
+            <div class="price" id="dm-price">₹0</div>
+            <div class="actions-row">
+              <button id="dm-add" class="primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <button id="dm-close-2" class="ghost">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

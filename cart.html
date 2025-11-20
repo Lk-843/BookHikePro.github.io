@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Hike Pro • Cart</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">📚 Book Hike Pro</a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="cart.html" class="active">Cart <span id="cart-count" class="badge">0</span></a>
+      <a id="admin-link" href="admin.html" style="display:none">Admin</a>
+      <span class="spacer"></span>
+      <span id="greeting" class="muted"></span>
+      <a id="auth-link" href="auth.html" style="display:none">Login</a>
+      <button id="logout-btn" class="ghost small" style="display:none">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Your Cart</h1>
+    <section id="cart-items" class="list"></section>
+
+    <div class="cart-summary card">
+      <div class="row" style="justify-content:space-between">
+        <strong>Total</strong>
+        <strong id="cart-total">₹0</strong>
+      </div>
+      <button id="checkout-btn" class="primary">Checkout</button>
+      <p class="muted tiny">Demo checkout (no payment). Your items will be “ordered” and the cart will clear.</p>
+    </div>
+  </main>
+
+  
+<footer class="footer">
+  <div class="footer-left">
+    <h3>📚 Book Hike Pro</h3>
+    <p class="muted tiny">A modern, fast bookstore web app for college submission.</p>
+  </div>
+  <div class="footer-mid">
+    <h4>Student Info</h4>
+    <p><strong>Name:</strong> Bittu Barh</p>
+    <p><strong>Division:</strong> EV1 • <strong>Roll:</strong> 92400120400</p>
+    <p><strong>Email:</strong> bittu.barh@example.com</p>
+  </div>
+  <div class="footer-right">
+    <h4>Follow</h4>
+    <p>
+      <a href="https://www.instagram.com/" target="_blank">Instagram</a> |
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> |
+      <a href="https://www.github.com/" target="_blank">GitHub</a>
+    </p>
+    <p class="tiny muted">© <span id="year"></span> Book Hike Pro</p>
+  </div>
+</footer>
+<script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('#year').forEach(el=>el.textContent=new Date().getFullYear())});</script>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
